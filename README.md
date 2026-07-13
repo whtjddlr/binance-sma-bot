@@ -85,7 +85,7 @@ docker compose exec portfolio-paper portfolio-paper status
 docker compose down
 ```
 
-클라우드 VM에서는 저장소를 clone한 뒤 위 명령을 실행하고 `data` 디렉터리를 영구 디스크에 보존하세요. 컨테이너의 `restart: unless-stopped`는 프로세스 장애와 VM 재부팅 후 재시작을 돕지만, 호스트 자체가 삭제되면 상태도 사라집니다.
+클라우드 VM에서는 저장소를 clone한 뒤 위 명령을 실행하세요. Compose는 `portfolio-data` Docker 볼륨에 상태를 보존합니다. `restart: unless-stopped`는 프로세스 장애와 VM 재부팅 후 재시작을 돕지만, 호스트 자체가 삭제되면 볼륨도 사라질 수 있으므로 VM 스냅샷이나 영구 디스크 백업이 필요합니다. `docker compose down -v`는 상태 볼륨까지 삭제하므로 사용하지 마세요.
 
 ## 과거 데이터 백테스트
 
