@@ -1,0 +1,11 @@
+services:
+  portfolio-paper:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env.portfolio
+    environment:
+      PORTFOLIO_STATE_FILE: /app/data/portfolio-paper-state.json
+    volumes:
+      - ./data:/app/data
+    command: ["portfolio-paper", "run"]

@@ -1,4 +1,5 @@
 .env
+.env.portfolio
 .venv/
 __pycache__/
 *.py[cod]
@@ -7,6 +8,7 @@ __pycache__/
 *.egg-info/
 build/
 dist/
-data/*.json
-data/*.lock
+data/**/*.json
+data/**/*.lock
 !data/.gitkeep
+*.zip

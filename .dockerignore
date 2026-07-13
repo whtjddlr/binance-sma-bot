@@ -1,0 +1,16 @@
+.git
+.agents
+.codex
+.env
+.env.portfolio
+.venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.ruff_cache
+*.egg-info
+build
+dist
+data/*
+!data/.gitkeep
+*.zip
