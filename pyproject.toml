@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "binance-sma-bot"
+version = "0.4.0"
+description = "Safety-first Binance Spot SMA crossover trading starter"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "ccxt==4.5.64",
+  "filelock==3.29.7",
+  "python-dotenv==1.2.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2"]
+
+[project.scripts]
+sma-bot = "binance_sma_bot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
